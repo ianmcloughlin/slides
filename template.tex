@@ -61,4 +61,43 @@ def f(x, m):
   \end{adjustbox}
 \end{frame}
 
+
+\begin{frame}{Bridges of K\"{o}nigsberg}
+  \vspace{8mm}
+  \centering
+  \begin{adjustbox}{width=0.9\columnwidth, keepaspectratio}
+    \begin{tikzpicture}
+        \draw[gmitgreen,fill] (0,0) rectangle (10,6);
+        % Middle horizontal.
+        \draw[gmitblue,fill]  (0,2) rectangle (6,3);
+        % Bottom horizontal.
+        \draw[gmitblue,fill]  (7,1) rectangle (10,2);
+        % Left vertical.
+        \draw[gmitblue,fill]  (2,3) rectangle (3,4);
+        % Top horizontal
+        \draw[gmitblue,fill]  (3,4) rectangle (10,5);
+        % Right vertical.
+        \draw[gmitblue,fill]  (6,2) rectangle (7,4);
+        % Top left bend.
+        \begin{scope}
+            \clip (2,4) rectangle (3,5);
+            \draw[gmitblue,fill] (3,4) circle (1);
+        \end{scope}
+        % Top left bend.
+        \begin{scope}
+            \clip (6,1) rectangle (7,2);
+            \draw[gmitblue,fill] (7,2) circle (1);
+        \end{scope}
+        % Bridges.
+        \draw[gmitred,fill] (3.3,1.9) rectangle (3.5,3.1);
+        \draw[gmitred,fill] (3.3,3.9) rectangle (3.5,5.1);
+        \draw[gmitred,fill] (5.1,1.9) rectangle (5.3,3.1);
+        \draw[gmitred,fill] (5.1,3.9) rectangle (5.3,5.1);
+        \draw[gmitred,fill] (5.9,3.4) rectangle (7.1,3.6);
+        \draw[gmitred,fill] (8.2,3.9) rectangle (8.4,5.1);
+        \draw[gmitred,fill] (8.2,0.9) rectangle (8.4,2.1);
+    \end{tikzpicture}
+  \end{adjustbox}
+\end{frame}
+
 \end{document}
